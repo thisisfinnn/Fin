@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alumni Angkatan 2025</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Tailwind config untuk Dark Mode -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class'
+    }
+  </script>
+
+  <!-- Font dan CSS tambahan -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap');
+    body {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .judul-website {
+      font-family: 'Great Vibes', cursive;
+    }
+    .modal {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    body {
+  cursor: url('https://images-eds-ssl.xboxlive.com/image?url=rOOPPWX9ohGfLksSzq1Wig8iTZ05uPbeb.DpV4tdbbbWNm1XXu8uEEIOyHxIQzbkg6QV19S8ccQ3rJJvQNmSUjWGPrJ2xdsBXB0tu3QXTYir1QqCQaFq6boVafipW8dNYmXgbqOR2.PoENWIhB0PYahWrh5hGXnIZ.CXDPtZ_PNZawbC0Kp2ZHjvgMiONF4hvxv6cWCDbO3MX2YKmsdTFJSWe1yynb8kgGfhhqhpSrrfuBeuuHFr3FpVuAqgPnCILkISo0y2Jrgnpp7QqSYq0ipp8Zm5Uuf9n7O5469Fo0aP0ImfNqt1JQltoVNudk0N&format=source&h=253'), auto;
+}
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-300 to-yellow-100 dark:from-gray-900 dark:to-gray-800 min-h-screen p-6 text-gray-900 dark:text-gray-100">
+
+  <!-- Tombol Dark Mode -->
+  <div class="flex justify-end mb-4">
+    <button id="themeToggle" class="bg-blue-600 dark:bg-yellow-400 text-white dark:text-black px-4 py-2 rounded-full shadow-md hover:shadow-lg transition">
+      🌙 Dark Mode
+    </button>
+  </div>
+
+  <!-- Header -->
+  <header class="flex flex-col items-center mb-10">
+    <div class="flex items-center justify-center gap-4 mb-4">
+      <img src="https://abtour.co.id/wp-content/uploads/2023/08/mutiara-bangsa.png" alt="Logo Sekolah" class="w-20 h-20">
+      <h1 class="text-5xl md:text-6xl text-blue-800 dark:text-yellow-300 font-bold judul-website">Alumni Mutiara Bangsa 1</h1>
+      <img src="Logo.PNG" alt="Logo Kelompok" class="w-20 h-20">
+    </div>
+    <p class="text-xl text-gray-700 dark:text-gray-300 border-b-2 border-blue-300 dark:border-yellow-300 px-4 pb-1">Angkatan 2025</p>
+  </header>
+
+  <!-- Daftar Alumni -->
+  <div class="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
+
+    <!-- Alumni 1 -->
+    <div class="alumni-card bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 cursor-pointer"
+      onclick="openModal('Luvin', 'LuvinAlmet.JPG', 'Dulu aku tidak bisa bergaul, namun setelah 3 tahun berada di SMK, saya perlahan lahan bisa berkomunikasi dengan orang lain.')">
+      <h2 class="text-3xl font-bold text-center mb-6 text-blue-900 dark:text-yellow-200">Luvin</h2>
+      <div class="bg-blue-50 dark:bg-gray-800 p-4 rounded-xl shadow-inner">
+        <img src="Kazuha.JPG" alt="Foto Luvin" class="rounded-xl mx-auto hover:scale-105 transition-transform duration-300 w-full h-[460px] object-cover">
+      </div>
+    </div>
+
+    <!-- Alumni 2 -->
+    <div class="alumni-card bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 cursor-pointer"
+      onclick="openModal('Gabriel Yustin', 'YustinFormal.JPEG', 'Pengalaman saya selama 3 tahun adalah... Sangat mengesankan✨')">
+      <h2 class="text-3xl font-bold text-center mb-6 text-blue-900 dark:text-yellow-200">Gabriel Yustin</h2>
+      <div class="bg-blue-50 dark:bg-gray-800 p-4 rounded-xl shadow-inner">
+        <img src="Yustin Bebas.JPEG" alt="Foto Gabriel" class="rounded-xl mx-auto hover:scale-105 transition-transform duration-300 w-full h-[460px] object-cover">
+      </div>
+    </div>
+
+    <!-- Alumni 3 -->
+    <div class="alumni-card bg-white dark:bg-gray-700 p-8 rounded-3xl shadow-2xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 cursor-pointer"
+      onclick="openModal('Henric Eugene', 'HenricFormal.JPEG', 'Selama 3 tahun, saya telah mendapatkan banyak sekali pengetahuan serta ketrampilan dari kunjungan maupun magang.')">
+      <h2 class="text-3xl font-bold text-center mb-6 text-blue-900 dark:text-yellow-200">Henric Eugene</h2>
+      <div class="bg-blue-50 dark:bg-gray-800 p-4 rounded-xl shadow-inner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/User-Pict-Profil.svg/1365px-User-Pict-Profil.svg.png" alt="Foto Henric"
+          class="rounded-xl mx-auto hover:scale-105 transition-transform duration-300 w-full h-[460px] object-cover">
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center modal z-50">
+    <div class="bg-white dark:bg-gray-700 rounded-xl p-8 max-w-2xl w-full relative shadow-2xl">
+      <button onclick="closeModal()" class="absolute top-3 right-4 text-3xl text-gray-500 hover:text-red-600">&times;</button>
+      <img id="modal-img" src="" class="w-64 h-80 object-cover rounded-xl mx-auto mb-6 shadow-md">
+      <h3 id="modal-name" class="text-center text-3xl font-bold text-blue-800 dark:text-yellow-200 mb-4"></h3>
+      <p id="modal-desc" class="text-gray-700 dark:text-gray-100 text-center px-6 text-lg"></p>
+    </div>
+  </div>
+
+  <!-- Script Modal -->
+  <script>
+    function openModal(name, imgSrc, desc) {
+      document.getElementById('modal-img').src = imgSrc;
+      document.getElementById('modal-name').textContent = name;
+      document.getElementById('modal-desc').textContent = desc;
+      document.getElementById('modal').classList.remove('hidden');
+      document.getElementById('modal').classList.add('flex');
+    }
+
+    function closeModal() {
+      document.getElementById('modal').classList.add('hidden');
+      document.getElementById('modal').classList.remove('flex');
+    }
+  </script>
+
+  <!-- Script Dark Mode -->
+  <script>
+    const toggleBtn = document.getElementById('themeToggle');
+    const html = document.documentElement;
+
+    // Cek preferensi tersimpan
+    if (localStorage.getItem('theme') === 'dark') {
+      html.classList.add('dark');
+      toggleBtn.innerText = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = html.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      toggleBtn.innerText = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
+
+</body>
+</html>
